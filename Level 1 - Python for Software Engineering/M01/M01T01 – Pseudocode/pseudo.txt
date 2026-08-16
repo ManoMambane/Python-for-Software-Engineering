@@ -1,0 +1,85 @@
+SCENARIO 1: Find the largest number entered (stop when user enters 0)
+
+BEGIN
+    largest = 0
+    REPEAT
+        PRINT "Enter a positive number (0 to stop): "
+        INPUT number
+        IF number > largest THEN
+            largest = number
+        END IF
+    UNTIL number = 0
+    PRINT "Largest number is: " + largest
+END
+
+
+SCENARIO 2: Greet user with "Hello, World"
+
+BEGIN
+    PRINT "Enter your name: "
+    INPUT first_name
+    PRINT first_name + ", Hello World"
+END
+
+
+SCENARIO 3: Calculate arithmetic average of any number of integers
+
+BEGIN
+    sum = 0
+    count = 0
+    REPEAT
+        PRINT "Enter an integer (or 'stop' to finish): "
+        INPUT number
+        IF number = "stop" THEN
+            EXIT LOOP
+        ELSE
+            sum = sum + number
+            count = count + 1
+        END IF
+    FOREVER
+    IF count > 0 THEN
+        average = sum / count
+        PRINT "Average is: " + average
+    ELSE
+        PRINT "No numbers entered"
+    END IF
+END
+
+
+SCENARIO 4: Print remaining grocery items in alphabetical order
+
+BEGIN
+    grocery_list = ["Milk", "Eggs", "Bread", "Butter", "Apples", "Cheese"]
+    bought_items = ["Milk", "Bread"]
+
+    FOR each item IN bought_items
+        REMOVE item FROM grocery_list
+    END FOR
+
+    SORT grocery_list ALPHABETICALLY
+
+    PRINT "Products still to buy (alphabetical):"
+    FOR each item IN grocery_list
+        PRINT item
+    END FOR
+END
+
+
+SCENARIO 5: Algorithm from the flowchart
+
+BEGIN
+    PRINT "Enter first number: "
+    INPUT x
+    PRINT "Enter second number: "
+    INPUT y
+
+    IF x > y THEN
+        result = x * 2
+        PRINT "Result: " + result
+    ELSE
+        result = y + 10
+        PRINT "Result: " + result
+    END IF
+
+    // Add more steps here based on the actual flowchart
+END
